@@ -28,9 +28,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup Node.js
         uses: actions/setup-node@v2
+
+      - name: Build next app
         run: |
           npm ci
-          npm run export
+          npm run build
+          npm run start
 
       # Runs a set of commands using the runners shell
       - name: Lint
